@@ -1,10 +1,9 @@
 <p-orderList
   [value]="products"
   [listStyle]="{'height':'auto'}"
-  header="List of Products"
+  header="List of Orders"
   filterBy="name"
   filterPlaceholder="Filter by name"
-  dragdrop="true"
 >
   <ng-template let-product pTemplate="item">
     <div class="product-item">
@@ -17,16 +16,11 @@
       </div>
       <div class="product-list-action">
         <h6 class="p-mb-2">${{product.totalPrice}}</h6>
-        <span [class]="'product-badge-'+ currentStatus.toLowerCase()"
-          >{{currentStatus}}</span
+        <span
+          [class]="'product-badge-'+ product.status.toLowerCase()"
+          (click)="changeStatus(product)"
+          >{{product.status}}</span
         >
-        <button
-          type="submit"
-          class="btn btn-primary mt-1"
-          (click)="changeStatus(currentStatus)"
-        >
-          Change Status
-        </button>
       </div>
     </div>
   </ng-template>

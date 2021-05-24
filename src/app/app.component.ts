@@ -24,13 +24,20 @@ export class AppComponent {
     this.primengConfig.ripple = true;
   }
 
-  changeStatus(status) {
-    console.log(status);
-    if (status == this.status[0]) {
-      this.currentStatus = this.status[1];
-    }
-    if (status == this.status[1]) {
-      this.currentStatus = this.status[2];
-    }
+  changeStatus(product) {
+    console.log(product);
+    this.products.forEach(order => {
+      if (order.id == product.id) {
+        if (order.status == this.status[0]) {
+          order.status = this.status[1];
+        }
+        if (order.status == this.status[1]) {
+          order.status = this.status[2];
+        }
+        if (order.status == this.status[2]) {
+          order.status = this.status[1];
+        }
+      }
+    });
   }
 }
