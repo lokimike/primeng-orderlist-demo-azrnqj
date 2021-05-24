@@ -1,27 +1,54 @@
-<p-orderList
-  [value]="products"
-  [listStyle]="{'height':'auto'}"
-  header="List of Orders"
-  filterBy="name"
-  filterPlaceholder="Filter by name"
->
+<p-orderList [value]="products" [listStyle]="{'height':'auto'}" header="List of Orders" filterBy="name"
+  filterPlaceholder="Filter by name">
   <ng-template let-product pTemplate="item">
     <div class="product-item">
-      <div class="product-list-detail">
+      <div class="product-list-detail" (click)="showDialog(product)">
         <h5 class="p-mb-2">{{product.name}}</h5>
         <i class="pi pi-tag product-category-icon"></i>
         <span class="product-category"
-          >Total-Items: {{product.orderedItems}}</span
-        >
+          >Total-Items: {{product.orderedItems}}</span>
       </div>
       <div class="product-list-action">
         <h6 class="p-mb-2">${{product.totalPrice}}</h6>
         <span
           [class]="'product-badge-'+ product.status.toLowerCase()"
-          (click)="changeStatus(product)"
-          >{{product.status}}</span
-        >
+          (click)="changeStatus(product,$event)"
+          >{{product.status}}</span>
       </div>
     </div>
   </ng-template>
 </p-orderList>
+<p-dialog header="Order Details" [(visible)]="display">
+  <p-accordion>
+    <p-accordionTab header="Customer Name ">
+      <p-chip> {{selectedOrder.name}}</p-chip>
+    </p-accordionTab>
+    <p-accordionTab header="Items">
+      <p-table [value]="selecteditems">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{product.itemName}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+          </tr>
+
+        </ng-template>
+
+      </p-table>
+      <br>
+      <p-chip label="-Total Price" icon="pi pi-dollar">{{selectedTotal}}</p-chip>
+
+
+    </p-accordionTab>
+    <p-accordionTab header="Delivery Address">
+      <span >{{selectedOrder.address}}</span>
+    </p-accordionTab>
+  </p-accordion>
+</p-dialog>

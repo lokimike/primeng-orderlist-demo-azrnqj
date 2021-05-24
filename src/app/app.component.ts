@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from './productservice';
 import { Product } from './product';
 import { PrimeNGConfig } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,11 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent {
   products: Product[];
   status: string[] = ['Order Received', 'Preparing', 'Ready To Serve'];
-  currentStatus: string = 'Order Received';
+  display: boolean = false;
+  selectedOrder = {};
+  selecteditems = [];
+  selectedTotal;
+
   constructor(
     private productService: ProductService,
     private primengConfig: PrimeNGConfig
@@ -24,18 +29,25 @@ export class AppComponent {
     this.primengConfig.ripple = true;
   }
 
-  changeStatus(product) {
+  showDialog(order) {
+    this.display = true;
+    this.selectedOrder = order;
+    this.selecteditems = order.items;
+    this.selectedTotal = order.totalPrice;
+    console.log(this.selectedOrder, this.selecteditems);
+  }
+
+  changeStatus(product, event) {
     console.log(product);
     this.products.forEach(order => {
       if (order.id == product.id) {
         if (order.status == this.status[0]) {
           order.status = this.status[1];
+          return order.status;
         }
         if (order.status == this.status[1]) {
+          console.log(order.status);
           order.status = this.status[2];
-        }
-        if (order.status == this.status[2]) {
-          order.status = this.status[1];
         }
       }
     });

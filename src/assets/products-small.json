@@ -1,7 +1,7 @@
 [
   {
       "id": 1,
-      "name": "Ram",
+      "name": "Ram kumar",
       "orderedItems": "3",
       "totalPrice": "320.00",
       "status": "Order Received",
@@ -13,11 +13,11 @@
         "price": "150",
         "quantity":"1"}
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   },
   {
       "id": 2,
-      "name": "Raj",
+      "name": "Raj Kapoor",
       "orderedItems": "3",
       "totalPrice": "450.00",
       "status": "Ready To serve",
@@ -34,11 +34,11 @@
         "quantity":"1"
         }
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   },
  {
       "id": 3,
-      "name": "John",
+      "name": "John Paul",
       "orderedItems": "2",
       "totalPrice": "320.00",
       "status": "Ready To Serve",
@@ -47,11 +47,11 @@
         "price": "170",
         "quantity":"2"}
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   },
   {
       "id": 4,
-      "name": "Amar",
+      "name": "Amarnath",
       "orderedItems": "2",
       "totalPrice": "320.00",
       "status": "Order Received",
@@ -63,11 +63,11 @@
         "price": "150",
         "quantity":"1"}
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   },
   {
       "id": 5,
-      "name": "Harshad",
+      "name": "Harshad Mehta",
       "orderedItems": "2",
       "totalPrice": "320.00",
       "status": "Ready To Serve",
@@ -79,7 +79,7 @@
         "price": "150",
         "quantity":"1"}
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   },
   {
       "id": 6,
@@ -92,6 +92,6 @@
         "price": "160",
         "quantity":"2"}
       ],
-      "address":"no.223.gandhi street,new delhi"
+      "address":"No.223.Gandhi street,New Delhi"
   }
 ]
