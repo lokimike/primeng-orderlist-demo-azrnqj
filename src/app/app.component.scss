@@ -30,8 +30,20 @@
     line-height: 1;
   }
 
-  .product-badge-instock {
-    background: red !important;
+  .product-badge-order {
+    background: #ffbf00;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .product-badge-ready {
+    background: rgb(56, 182, 56);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .product-badge-preparing {
+    background: #daa474;
+    padding: 5px;
+    border-radius: 10px;
   }
 }
 

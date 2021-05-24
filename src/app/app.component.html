@@ -8,18 +8,17 @@
 >
   <ng-template let-product pTemplate="item">
     <div class="product-item">
-      <div class="image-container">
-        <img src="assets/pizza.png" class="product-image" />
-      </div>
       <div class="product-list-detail">
         <h5 class="p-mb-2">{{product.name}}</h5>
         <i class="pi pi-tag product-category-icon"></i>
-        <span class="product-category">{{product.category}}</span>
+        <span class="product-category"
+          >Total-Items: {{product.orderedItems}}</span
+        >
       </div>
       <div class="product-list-action">
-        <h6 class="p-mb-2">${{product.price}}</h6>
-        <span [class]="'product-badge-'+ product.inventoryStatus.toLowerCase()"
-          >{{product.inventoryStatus}}</span
+        <h6 class="p-mb-2">${{product.totalPrice}}</h6>
+        <span [class]="'product-badge-'+ product.status.toLowerCase()"
+          >{{product.status}}</span
         >
       </div>
     </div>

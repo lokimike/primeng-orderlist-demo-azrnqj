@@ -14,7 +14,7 @@ export class AppComponent {
     constructor(private productService: ProductService, private primengConfig: PrimeNGConfig) { }
 
     ngOnInit() {
-        this.productService.getProductsSmall().then(cars => this.products = cars);
+        this.productService.getProductsSmall().then(order => this.products = order);
         this.primengConfig.ripple = true;
     }
 }
