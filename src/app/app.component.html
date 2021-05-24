@@ -1,9 +1,16 @@
-<p-orderList [value]="products" [listStyle]="{'height':'auto'}" header="List of Products" filterBy="name"
-  filterPlaceholder="Filter by name" dragdrop="true">
+<p-orderList
+  [value]="products"
+  [listStyle]="{'height':'auto'}"
+  header="List of Products"
+  filterBy="name"
+  filterPlaceholder="Filter by name"
+  dragdrop="true"
+>
   <ng-template let-product pTemplate="item">
-    <div class="product-item"><div class="image-container">
-                    <img src="assets/showcase/images/demo/product/{{product.image}}" [alt]="product.name" class="product-image" />
-            </div>
+    <div class="product-item">
+      <div class="image-container">
+        <img src="assets/pizza.png" class="product-image" />
+      </div>
       <div class="product-list-detail">
         <h5 class="p-mb-2">{{product.name}}</h5>
         <i class="pi pi-tag product-category-icon"></i>
@@ -11,7 +18,9 @@
       </div>
       <div class="product-list-action">
         <h6 class="p-mb-2">${{product.price}}</h6>
-        <span [class]="'product-badge-'+ product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+        <span [class]="'product-badge-'+ product.inventoryStatus.toLowerCase()"
+          >{{product.inventoryStatus}}</span
+        >
       </div>
     </div>
   </ng-template>
