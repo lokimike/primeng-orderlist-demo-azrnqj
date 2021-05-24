@@ -17,9 +17,16 @@
       </div>
       <div class="product-list-action">
         <h6 class="p-mb-2">${{product.totalPrice}}</h6>
-        <span [class]="'product-badge-'+ product.status.toLowerCase()"
-          >{{product.status}}</span
+        <span [class]="'product-badge-'+ currentStatus.toLowerCase()"
+          >{{currentStatus}}</span
         >
+        <button
+          type="submit"
+          class="btn btn-primary mt-1"
+          (click)="changeStatus(currentStatus)"
+        >
+          Change Status
+        </button>
       </div>
     </div>
   </ng-template>
